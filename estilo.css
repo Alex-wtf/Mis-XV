@@ -1,0 +1,240 @@
+* { box-sizing: border-box; }
+:root {
+  --morado: #21102f;
+  --morado-claro: #3b1b4b;
+  --dorado: #f5cf82;
+  --dorado-claro: #fff0c5;
+  --texto: #fff5e7;
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--texto);
+  background: radial-gradient(ellipse at 50% 15%, #603b72 0, #291436 44%, #120a1d 100%);
+  font-family: "Playfair Display", Georgia, serif;
+  text-align: center;
+  padding: 24px 12px 48px;
+}
+.invitacion {
+  max-width: 860px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245,207,130,.7);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(23,8,34,.32), rgba(20,7,32,.28)),
+    url("assets/fondo-sin-letras.jpg") center top / 100% 100% no-repeat;
+  box-shadow: 0 0 45px rgba(245,207,130,.12), inset 0 0 50px rgba(245,207,130,.05);
+}
+.invitacion::before, .invitacion::after {
+  content: "✦";
+  position: absolute;
+  color: var(--dorado);
+  opacity: .8;
+  font-size: 26px;
+}
+.invitacion::before { top: 22px; left: 25px; }
+.invitacion::after { bottom: 22px; right: 25px; }
+.portada { position: relative; padding: 28px clamp(18px, 5vw, 56px) 34px; }
+.corona {
+  display: block;
+  width: min(340px, 72%);
+  height: 180px;
+  object-fit: contain;
+  margin: 0 auto 4px;
+  filter: drop-shadow(0 0 10px rgba(255,205,103,.5));
+}
+.intro { font-size: clamp(17px, 3vw, 24px); line-height: 1.45; margin: 4px 0 16px; }
+.titulo-xv {
+  margin: 0;
+  color: var(--dorado);
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(21px, 4vw, 31px);
+  letter-spacing: 3px;
+}
+.titulo-xv span { font-size: 1.7em; vertical-align: -5px; }
+.ornamento { color: var(--dorado); letter-spacing: 4px; margin: 8px 0 0; }
+h1 {
+  margin: 2px 0 -8px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(78px, 15vw, 132px);
+  line-height: 1.12;
+  font-weight: 400;
+  color: #ffe0a0;
+  text-shadow: 0 0 12px rgba(255,202,112,.42);
+}
+.nombre-completo { margin: 0 0 8px; color: #f8dba6; font-family: Cinzel, Georgia, serif; font-size: clamp(10px, 2vw, 14px); letter-spacing: 3px; }
+.verso { margin: 24px 0 10px; font-size: clamp(16px, 2.5vw, 20px); line-height: 1.55; }
+.sueno { margin: 12px 0; color: #ffe2ad; font-family: "Great Vibes", cursive; font-size: clamp(29px, 5vw, 42px); }
+.sueno span { display: inline-block; }
+.presencia { margin: 12px 0 26px; font-size: clamp(15px, 2.5vw, 19px); }
+.detalles { margin: 0 auto 26px; display: inline-block; text-align: left; }
+.detalles p { margin: 10px 0; font-size: clamp(16px, 2.5vw, 20px); }
+.icono { color: var(--dorado); display: inline-block; width: 34px; font-size: 25px; text-align: center; margin-right: 8px; }
+.boton-asistencia {
+  display: inline-block;
+  color: #fff0c9;
+  background: linear-gradient(180deg, #51245f, #2b1238);
+  border: 2px solid var(--dorado);
+  border-radius: 40px;
+  padding: 13px 44px;
+  text-decoration: none;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(245,207,130,.16);
+}
+.confirmacion {
+  max-width: 530px;
+  margin: 28px auto 0;
+  padding: 22px 20px;
+  border: 1px solid rgba(245,207,130,.85);
+  border-radius: 13px;
+  background: rgba(24, 10, 33, .72);
+  box-shadow: inset 0 0 22px rgba(245,207,130,.04);
+}
+.confirmacion h2 { color: var(--dorado-claro); margin: 0 0 7px; font: 500 19px Cinzel, Georgia, serif; }
+.confirmacion > p { font-size: 14px; line-height: 1.45; }
+#formularioRSVP { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+#nombres {
+  width: 100%; min-width: 0; padding: 13px 15px; border-radius: 28px;
+  border: 1px solid rgba(245,207,130,.75); background: #281632; color: white;
+  font: 15px "Playfair Display", Georgia, serif; outline: none;
+}
+#nombres:focus { box-shadow: 0 0 0 3px rgba(245,207,130,.18); }
+#formularioRSVP button {
+  align-self: center; min-width: 170px; border: 1px solid #fff0c5; border-radius: 25px;
+  background: linear-gradient(#f7d99b, #c99145); color: #32183d; padding: 11px 28px;
+  font: 600 16px Cinzel, Georgia, serif; cursor: pointer;
+}
+.mensaje { min-height: 18px; color: #ffe0a0; }
+.contador { margin-bottom: 0; color: #ead7eb; }
+.flor { position: absolute; width: clamp(100px, 18vw, 165px); left: -14px; bottom: 190px; opacity: .78; pointer-events: none; }
+footer { margin-top: 27px; color: #d8bfdc; font-size: 13px; }
+.control-musica {
+  position: relative;
+  z-index: 2;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  max-width: 430px; margin: 0 auto 14px; padding: 10px 14px;
+  border: 1px solid rgba(245,207,130,.65); border-radius: 14px;
+  background: rgba(26, 12, 36, .74);
+}
+.nota { color: var(--dorado); font-size: 25px; }
+.musica-texto { text-align: left; flex: 1; min-width: 0; }
+.musica-texto label { display: block; font: 14px Cinzel, Georgia, serif; color: var(--dorado-claro); margin-bottom: 4px; }
+.musica-texto input { width: 100%; max-width: 210px; font-size: 11px; color: #ead7eb; }
+.boton-icono { border: 1px solid var(--dorado); border-radius: 50%; width: 38px; height: 38px; color: var(--dorado); background: #32173f; cursor: pointer; }
+.volumen { width: 70px; accent-color: var(--dorado); }
+.brillo {
+  position: absolute; z-index: 1; width: 7px; height: 7px; border-radius: 50%;
+  background: #fff6c9; box-shadow: 0 0 7px 3px #ffd777, 0 0 18px 6px rgba(255,199,83,.5);
+  pointer-events: none; animation: parpadeo 2.4s ease-in-out infinite;
+}
+.brillo-1 { top: 72px; left: 50%; animation-delay: .1s; }
+.brillo-2 { top: 142px; left: calc(50% - 105px); width: 4px; height: 4px; animation-delay: 1.1s; }
+.brillo-3 { top: 164px; left: calc(50% + 108px); width: 5px; height: 5px; animation-delay: .7s; }
+.brillo-4 { top: 430px; right: 23%; width: 4px; height: 4px; animation-delay: 1.5s; }
+@keyframes parpadeo { 0%, 100% { opacity: .18; transform: scale(.65); } 45% { opacity: 1; transform: scale(1.2); } 60% { opacity: .7; transform: scale(.9); } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (max-width: 520px) {
+  body { padding: 8px 6px 24px; }
+  .portada { padding: 18px 16px 28px; }
+  .corona { height: 135px; }
+  .control-musica { flex-wrap: wrap; }
+  .musica-texto { flex-basis: 60%; }
+  .volumen { width: 60px; }
+  .flor { opacity: .32; bottom: 230px; }
+}
+@media (prefers-reduced-motion: reduce) { .brillo { animation-duration: 6s; } }
+
+.titulo-musica { color: var(--dorado-claro); font: 14px Cinzel, Georgia, serif; flex: 1; text-align: left; }
+
+/* Estrellas intensas: solo parpadean, sin desplazarse */
+.brillo { width: 9px; height: 9px; background: #fffef2; box-shadow: 0 0 4px 2px #fff, 0 0 15px 7px #ffcb58, 0 0 35px 12px rgba(255,184,44,.75); animation: parpadeo-intenso 2.1s ease-in-out infinite; }
+.brillo::before, .brillo::after { content:""; position:absolute; background:linear-gradient(90deg,transparent,#fff9d8,transparent); left:50%; top:50%; transform:translate(-50%,-50%); }
+.brillo::before { width:35px; height:2px; } .brillo::after { width:2px; height:35px; }
+.brillo-5 {top:4%;left:20%;animation-delay:.2s}.brillo-6 {top:7%;right:20%;animation-delay:1.4s}
+.brillo-7 {top:19%;left:11%;animation-delay:.8s}.brillo-8 {top:28%;right:13%;animation-delay:1.9s}
+.brillo-9 {top:40%;left:9%;animation-delay:.5s}.brillo-10 {top:46%;right:16%;animation-delay:1.2s}
+.brillo-11 {top:57%;left:14%;animation-delay:1.8s}.brillo-12 {top:65%;right:10%;animation-delay:.3s}
+.brillo-13 {top:72%;left:23%;animation-delay:1s}.brillo-14 {top:80%;right:24%;animation-delay:1.6s}
+.brillo-15 {top:89%;left:12%;animation-delay:.6s}.brillo-16 {top:95%;right:10%;animation-delay:1.3s}
+@keyframes parpadeo-intenso {0%,100%{opacity:.12;filter:brightness(.6)}48%{opacity:1;filter:brightness(1.5)}65%{opacity:.5;filter:brightness(1)}}
+/* Sombras ligeras sobre las letras para que no se mezclen con el paisaje */
+.intro,.titulo-xv,.verso,.sueno,.presencia,.detalles,.nombre-completo,h1 { text-shadow: 0 2px 9px #1a0825, 0 0 16px #1a0825; }
+@media (prefers-reduced-motion: reduce){.brillo{animation:none;opacity:.8}}
+
+/* Enlace a la ubicación del evento en Waze */
+.enlace-waze { color: #ffe4a2; font-weight: 600; text-decoration: underline; text-decoration-color: #e8bd62; text-underline-offset: 4px; }
+.enlace-waze:hover, .enlace-waze:focus-visible { color: #fff9e6; text-shadow: 0 0 12px #f6ce75; }
+
+/* AJUSTES FINALES: las decoraciones están integradas en el fondo. */
+.corona, .flor { display: none !important; }
+.nombre-completo { display: none !important; }
+.invitacion { background-image: linear-gradient(180deg, rgba(23,8,34,.38), rgba(20,7,32,.34)), url("assets/fondo-sin-letras.jpg"); }
+/* Suavizar la apariencia de la tipografía sin desenfocar las letras. */
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.intro, .verso, .presencia, .detalles, .confirmacion, footer { font-weight: 400; text-shadow: 0 1px 2px rgba(18,8,28,.35); }
+h1 { text-shadow: 0 1px 3px rgba(255,215,145,.2); }
+.titulo-xv, .ornamento { text-shadow: 0 1px 2px rgba(23,10,32,.3); }
+.boton-asistencia { display: block; width: fit-content; margin: 28px auto 12px; cursor: pointer; }
+.confirmacion[hidden] { display: none !important; }
+.confirmacion { scroll-margin-top: 20px; }
+
+/* Corona incrustada en el paisaje, sin recortes visibles. */
+.invitacion {
+ background: linear-gradient(180deg,rgba(20,8,34,.12),rgba(20,8,34,.26)), url("assets/fondo-con-corona.jpg") center top / 100% 100% no-repeat !important;
+}
+/* Reservar espacio para ver la corona, sin taparla con las letras. */
+.portada { padding-top: 24px; }
+.intro { margin-top: clamp(180px, 25vw, 235px); }
+/* Destellos fuertes y visibles en la corona, la flor, los faroles y todo el paisaje. */
+.brillo { z-index: 4 !important; width: 10px !important; height: 10px !important; border-radius: 50%;
+ background: #fff !important; box-shadow: 0 0 6px 3px #fff9d5, 0 0 18px 8px #ffd15a, 0 0 36px 14px rgba(255,193,56,.8) !important;
+ animation: destello-fuerte 2.2s ease-in-out infinite !important; }
+.brillo::before { width: 43px !important; height: 3px !important; }
+.brillo::after { height: 43px !important; width: 3px !important; }
+@keyframes destello-fuerte {0%,100%{opacity:.08;filter:brightness(.8)}35%,55%{opacity:1;filter:brightness(2)}70%{opacity:.18;filter:brightness(.8)}}
+.brillo-1{top:10%;left:50%}.brillo-2{top:13%;left:38%}.brillo-3{top:13%;left:63%}
+.brillo-4{top:17%;left:48%}.brillo-5{top:4%;left:19%}.brillo-6{top:7%;right:19%}
+.brillo-7{top:23%;left:10%}.brillo-8{top:30%;right:11%}.brillo-9{top:41%;left:9%}
+.brillo-10{top:47%;right:13%}.brillo-11{top:57%;left:13%}.brillo-12{top:66%;right:10%}
+.brillo-13{top:73%;left:22%}.brillo-14{top:80%;right:22%}.brillo-15{top:90%;left:11%}.brillo-16{top:94%;right:12%}
+@media(max-width:520px){.intro{margin-top:150px}.brillo::before{width:29px!important}.brillo::after{height:29px!important}}
+@media(prefers-reduced-motion:reduce){.brillo{animation:none!important;opacity:1}}
+
+
+/* AJUSTE OCTUBRE: corona despejada y textos legibles. */
+/* La imagen sigue quieta: el texto comienza por debajo de la corona. */
+.portada { padding-top: 22px; }
+.intro { margin-top: clamp(290px, 39vw, 345px) !important; }
+@media (max-width: 520px) { .intro { margin-top: clamp(235px, 67vw, 315px) !important; } }
+/* Más contraste y tipografía limpia, sin filtros de desenfoque. */
+body { font-family: 'Cormorant Garamond', Georgia, serif; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+.intro,.verso,.presencia,.detalles { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; font-size:clamp(20px,3.2vw,26px); line-height:1.4; color:#fffaf1; text-shadow:0 2px 4px #1b0829,0 0 14px rgba(15,5,26,.9) !important; }
+.titulo-xv { font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(29px,5vw,40px); letter-spacing:1px; color:#ffe2a6; text-shadow:0 2px 6px #1b0829 !important; }
+h1,.sueno { font-family:'Great Vibes',cursive; text-shadow:0 2px 5px #1b0829,0 0 10px rgba(22,8,30,.75) !important; }
+.ornamento { text-shadow:0 2px 6px #1b0829 !important; }
+.confirmacion { background:rgba(21,9,32,.87); }
+.confirmacion h2,.confirmacion p,footer { color:#fff3e5; text-shadow:0 1px 4px #1b0829; }
+/* Destellos que SE APAGAN por completo entre encendidos, sin moverse. */
+.brillo { animation: aparecer-desaparecer 3s steps(1,end) infinite !important; opacity:0; }
+.brillo::before,.brillo::after { opacity:inherit; }
+@keyframes aparecer-desaparecer {
+  0%,24%,52%,100% { opacity:0; }
+  25%,43% { opacity:1; }
+  44%,51% { opacity:0; }
+  53%,60% { opacity:1; }
+  61%,99% { opacity:0; }
+}
+.brillo-1 { top:8%;left:50%;animation-delay:-.1s!important; }
+.brillo-2 { top:12%;left:39%;animation-delay:-1.2s!important; }
+.brillo-3 { top:12%;left:61%;animation-delay:-2.1s!important; }
+.brillo-4 { top:17%;left:51%;animation-delay:-.8s!important; }
+@media (prefers-reduced-motion:reduce) { .brillo { animation:none!important;opacity:.7; } }
+
+/* Información de regalo e invitación individual */
+.aviso-evento { margin: 20px auto 12px; padding: 10px 12px; max-width: 470px; text-align: center; }
+.aviso-evento .lluvia-sobres { color: #ffe1a3; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(24px, 4.5vw, 33px); letter-spacing: .6px; margin: 4px 0 9px; text-shadow: 0 1px 7px rgba(0,0,0,.85); }
+.aviso-evento .invitacion-individual { color: #fff4e2; font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(20px, 3.5vw, 26px); font-weight: 600; margin: 0; text-shadow: 0 2px 8px rgba(0,0,0,.9); }

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21102f">
+  <meta name="description" content="Invitación a los XV años de Leidy Valentina Bañol Montes.">
+  <title>Mis XV años | Leidy Valentina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <main class="invitacion">
+    <div class="brillo brillo-1" aria-hidden="true"></div>
+    <div class="brillo brillo-2" aria-hidden="true"></div>
+    <div class="brillo brillo-3" aria-hidden="true"></div>
+    <div class="brillo brillo-4" aria-hidden="true"></div>
+    <div class="brillo brillo-5" aria-hidden="true"></div>
+    <div class="brillo brillo-6" aria-hidden="true"></div>
+    <div class="brillo brillo-7" aria-hidden="true"></div>
+    <div class="brillo brillo-8" aria-hidden="true"></div>
+    <div class="brillo brillo-9" aria-hidden="true"></div>
+    <div class="brillo brillo-10" aria-hidden="true"></div>
+    <div class="brillo brillo-11" aria-hidden="true"></div>
+    <div class="brillo brillo-12" aria-hidden="true"></div>
+    <div class="brillo brillo-13" aria-hidden="true"></div>
+    <div class="brillo brillo-14" aria-hidden="true"></div>
+    <div class="brillo brillo-15" aria-hidden="true"></div>
+    <div class="brillo brillo-16" aria-hidden="true"></div>
+
+
+    <section class="portada">
+      <div class="control-musica">
+        <span class="nota" aria-hidden="true">♫</span>
+        <span class="titulo-musica">Música de fondo</span>
+        <button id="botonMusica" class="boton-icono" type="button" aria-label="Reproducir música">▶</button>
+        <label class="sr-only" for="volumen">Volumen</label>
+        <input id="volumen" class="volumen" type="range" min="0" max="1" step="0.01" value="0.55">
+        <audio id="audioFondo" src="assets/musica.mp3" loop preload="none"></audio>
+      </div>
+      <p class="intro">Mis padres y yo tenemos el honor<br>de invitarte a celebrar</p>
+      <p class="titulo-xv">MIS <span>XV</span> AÑOS</p>
+      <div class="ornamento" aria-hidden="true">✧ ───── ♡ ───── ✧</div>
+      <h1>Leidy</h1>
+      <div class="ornamento ornamento-nombre" aria-hidden="true">✧ ─── ♡ ─── ✧</div>
+
+      <p class="verso">Dicen que, cuando despertamos,<br>
+        solo tenemos diez segundos para<br>
+        recordar lo que soñamos la noche anterior.</p>
+      <p class="sueno">Hoy ese sueño se ha hecho realidad:<br><span>Mis 15</span></p>
+      <p class="presencia">Tu presencia hará este recuerdo inolvidable.</p>
+
+      <div class="aviso-evento" aria-label="Información importante">
+        <p class="lluvia-sobres">✉ Lluvia de sobres ✉</p>
+        <p class="invitacion-individual">Invitación válida para una persona</p>
+      </div>
+
+      <div class="detalles">
+        <p><span class="icono">⌖</span> Dirección: <a class="enlace-waze" href="https://ul.waze.com/ul?ll=10.04197017%2C-84.42121171&amp;navigate=yes&amp;zoom=17&amp;utm_campaign=live_map&amp;utm_source=waze_website&amp;utm_medium=lm_share_location" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Waze">📍 Ver ubicación en Waze ↗</a></p>
+        <p><span class="icono">◷</span> 04:00 PM</p>
+      </div>
+
+
+
+      <section id="confirmar" class="confirmacion" hidden>
+        <h2>Confirma tu asistencia</h2>
+        <p>Esta invitación es individual. Escribí únicamente tu nombre completo.</p>
+        <form id="formularioRSVP">
+          <label class="sr-only" for="nombres">Nombre completo del invitado</label>
+          <input id="nombres" name="nombres" type="text" maxlength="80" autocomplete="name" placeholder="Ej.: María López" required>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        <p class="contador"><span aria-hidden="true">♟</span> Tu respuesta se enviará de forma privada.</p>
+      </section>
+      <footer>Con cariño, te esperamos para celebrar una noche inolvidable.</footer>
+      <button class="boton-asistencia" id="abrirConfirmacion" type="button" onclick="document.getElementById('confirmar').hidden=false; this.setAttribute('aria-expanded','true'); document.getElementById('confirmar').scrollIntoView({behavior:'smooth',block:'start'});" aria-controls="confirmar" aria-expanded="false">¡Sí, asistiré!</button>
+    </section>
+  </main>
+  <script src="interfaz.js" defer></script>
+<script type="module" src="firebase-submit.js"></script>
+</body>
+</html>
